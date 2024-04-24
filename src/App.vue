@@ -90,6 +90,11 @@ export default {
 			this.$router.push({ name: "home" })
 		}
 	},
+	created() {
+		if (this.authUser) {
+			this.getCurrentUser()
+		}
+	},
 	methods: {
 		logout() {
 			this.$store.dispatch("auth/logout")
